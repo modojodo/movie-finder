@@ -12,7 +12,6 @@ class App extends Component {
   }
 
   updateSearchResutls(results) {
-    console.log(results);
     this.setState({
       search: results && results.length ? results : []
     });

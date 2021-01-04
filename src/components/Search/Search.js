@@ -35,7 +35,6 @@ class Search extends Component {
 
   render() {
     const { query, isLoading } = this.state;
-    console.log(isLoading)
     return (
       <div className="columns">
         <div className="column is-9">
