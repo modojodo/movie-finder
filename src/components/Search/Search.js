@@ -33,13 +33,24 @@ class Search extends Component {
       });
   }
 
+  onKeyUp(event) {
+    // Trigger search if it's an enter key
+    if (event.key === 'Enter' || event.keyCode === 13) {
+      this.onSearch(event);
+    }
+  }
+
   render() {
     const { query, isLoading } = this.state;
     return (
       <div className="columns">
         <div className="column is-9">
           <div className="control">
-            <input className="input is-fullwidth is-rounded" type="text" placeholder="Search your media..." value={query}
+            <input className="input is-fullwidth is-rounded"
+                   type="text"
+                   placeholder="Search your media..."
+                   value={query}
+                   onKeyUp={this.onKeyUp.bind(this)}
                    onChange={this.onChange.bind(this)} disabled={isLoading}/>
           </div>
         </div>
