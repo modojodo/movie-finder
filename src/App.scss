@@ -9,9 +9,12 @@
 @import "~bulma/sass/elements/button";
 @import "~bulma/sass/elements/Image";
 @import "~bulma/sass/elements/box";
+@import "~bulma/sass/elements/notification";
 
 // Components
 @import "~bulma/sass/components/media";
+@import "~bulma/sass/components/modal";
+@import "~bulma/sass/components/card";
 
 // Layout styles
 @import "~bulma/sass/layout/all";
@@ -25,14 +28,28 @@
 //  Helper classes
 @import "~bulma/sass/helpers/spacing";
 @import "~bulma/sass/helpers/flexbox";
+@import "~bulma/sass/helpers/color";
 
 // Atomic classes
 .overflow-auto {
   overflow: auto;
 }
 
-
 // General styles
 html, body {
   font-family: 'Roboto', sans-serif;
+}
+
+.pointer-cursor {
+  cursor: pointer;
+}
+
+.fixed {
+  position: fixed;
+  bottom: -1px;
+}
+
+.no-radius {
+  border: none;
+  border-radius: 0;
 }
