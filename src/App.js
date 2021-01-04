@@ -2,6 +2,7 @@ import './App.scss';
 import { React, Component } from 'react';
 import Search from "./components/Search/Search";
 import Media from "./components/Media/Media";
+import Checkout from "./components/Checkout/Checkout";
 
 class App extends Component {
   constructor(props) {
@@ -23,32 +24,37 @@ class App extends Component {
       const addedMediaIndex = search.findIndex(media => media.imdbID === mediaId);
       search[addedMediaIndex].selected = selected
       return {
-        search
+        search,
+        inCart: search.some(media => media.selected),
       }
     })
   }
 
   render() {
-    const { search } = this.state;
+    const { search, inCart } = this.state;
     return (
-      <div className="App section">
-        <div className="container">
-          <Search updateResults={this.updateSearchResutls.bind(this)}/>
-          <div className="columns is-multiline">
-            {
-              search.map((media) => {
-                return (
-                  <Media media={media} onMediaClick={this.toggleMediaSelection.bind(this)} key={media.imdbID}/>
-                );
-              })
-            }
+      <>
+        <div className="App section">
+          <div className="container">
+            <Search updateResults={this.updateSearchResutls.bind(this)}/>
+            <div className="columns is-multiline">
+              {
+                search.map((media) => {
+                  return (
+                    <Media media={media} onMediaClick={this.toggleMediaSelection.bind(this)} key={media.imdbID}/>
+                  );
+                })
+              }
+            </div>
           </div>
         </div>
-      </div>
+        {
+          inCart &&
+          <Checkout onMediaClick={this.toggleMediaSelection.bind(this)} media={search.filter(media => media.selected)}/>
+        }
+      </>
     );
   }
-
-
 }
 
 export default App;
