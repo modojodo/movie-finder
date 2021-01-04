@@ -1,3 +1,13 @@
+#Screenshots
+
+###Mobile
+![alt text] (https://github.com/modojodo/movie-finder/blob/master/screenshots/mobile-1.png)
+![alt text] (https://github.com/modojodo/movie-finder/blob/master/screenshots/mobile-2.png)
+###Desktop
+![alt text] (https://github.com/modojodo/movie-finder/blob/master/screenshots/desktop-1.png)
+![alt text] (https://github.com/modojodo/movie-finder/blob/master/screenshots/desktop-2.png)
+![alt text] (https://github.com/modojodo/movie-finder/blob/master/screenshots/desktop-3.png)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
