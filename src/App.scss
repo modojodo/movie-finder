@@ -1,5 +1,32 @@
 // importing utilities (includes required mixins & variables)
 @import "~bulma/sass/utilities/all";
 
-// Responsive style related classes
+// Import all the base styles
+@import "~bulma/sass/base/all";
+
+// Elements
+@import "~bulma/sass/elements/container";
+@import "~bulma/sass/elements/button";
+@import "~bulma/sass/elements/Image";
+@import "~bulma/sass/elements/box";
+
+// Components
+@import "~bulma/sass/components/media";
+
+// Layout styles
+@import "~bulma/sass/layout/all";
+
+// Responsiveness style related classes
 @import "~bulma/sass/grid/columns.sass";
+
+// Form elements and their shared variables
+@import "~bulma/sass/form/all";
+
+//  Helper classes
+@import "~bulma/sass/helpers/spacing";
+@import "~bulma/sass/helpers/flexbox";
+
+// Atomic classes
+.overflow-auto {
+  overflow: auto;
+}
