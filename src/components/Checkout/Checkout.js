@@ -13,18 +13,20 @@ class Checkout extends Component {
   toggleModal() {
     this.setState(function (state) {
       return {
-        isModalActive: !state.isModalActive
+        isModalActive: !state.isModalActive,
+        done: false
       }
     });
   }
 
   checkout() {
-    this.setState(function (state) {
+    this.setState((state) => {
       return {
         ...state,
         done: true,
       }
     });
+    this.props.clear();
   }
 
   render() {

@@ -9,6 +9,7 @@ class App extends Component {
     super(props);
     this.state = {
       search: [],
+      inCart: false,
     }
   }
 
@@ -17,6 +18,7 @@ class App extends Component {
       search: results && results.length ? results : []
     });
   }
+
 
   toggleMediaSelection(mediaId, selected) {
     this.setState(function (state) {
@@ -30,8 +32,23 @@ class App extends Component {
     })
   }
 
+  clearSelection() {
+    this.setState(function (state) {
+      const { search } = state;
+      const newSearch = search.map(function (media) {
+        media.selected = false;
+        return media;
+      });
+      return {
+        ...state,
+        search: newSearch,
+        inCart: false
+      }
+    })
+  }
+
   render() {
-    const { search, inCart } = this.state;
+    const { search, inCart, emptyResults } = this.state;
     return (
       <>
         <div className="App section">
@@ -41,7 +58,9 @@ class App extends Component {
               {
                 search.map((media) => {
                   return (
-                    <Media media={media} onMediaClick={this.toggleMediaSelection.bind(this)} key={media.imdbID}/>
+                    <Media media={media}
+                           onMediaClick={this.toggleMediaSelection.bind(this)}
+                           key={media.imdbID}/>
                   );
                 })
               }
@@ -50,7 +69,9 @@ class App extends Component {
         </div>
         {
           inCart &&
-          <Checkout onMediaClick={this.toggleMediaSelection.bind(this)} media={search.filter(media => media.selected)}/>
+          <Checkout onMediaClick={this.toggleMediaSelection.bind(this)}
+                    media={search.filter(media => media.selected)}
+                    clear={this.clearSelection.bind(this)}/>
         }
       </>
     );

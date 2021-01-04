@@ -24,7 +24,7 @@ class Search extends Component {
   onSearch() {
     const { query } = this.state;
     this.updateState(query, true);
-    fetch(`http://www.omdbapi.com/?apikey=ed65566c&s=${query}`)
+    fetch(`https://www.omdbapi.com/?apikey=ed65566c&s=${query}`)
       .then(res => res.json())
       .then((data) => {
         const { updateResults } = this.props;
