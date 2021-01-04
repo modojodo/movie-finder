@@ -27,3 +27,5 @@ yarn-error.log*
 
 # bug in CRA that keeps generating this file, so commenting it out
 .eslintcache
+# Local Netlify folder
+.netlify
