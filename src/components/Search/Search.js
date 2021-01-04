@@ -37,16 +37,17 @@ class Search extends Component {
     const { query, isLoading } = this.state;
     console.log(isLoading)
     return (
-      <div className="columns mt-2">
+      <div className="columns">
         <div className="column is-9">
           <div className="control">
-            <input className="input is-fullwidth" type="text" placeholder="Search your movie..." value={query}
+            <input className="input is-fullwidth is-rounded" type="text" placeholder="Search your media..." value={query}
                    onChange={this.onChange.bind(this)} disabled={isLoading}/>
           </div>
         </div>
         <div className="column is-3">
           <div className="control">
-            <button className={`button is-primary is-fullwidth ${isLoading ? 'is-loading' : ''}`}
+            <button className={`button is-rounded is-primary is-fullwidth ${isLoading ? 'is-loading' : ''}`}
+                    disabled={query === ''}
                     onClick={this.onSearch.bind(this)}>
               <strong>Search</strong>
             </button>
