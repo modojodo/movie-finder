@@ -48,7 +48,7 @@ class App extends Component {
   }
 
   render() {
-    const { search, inCart, emptyResults } = this.state;
+    const { search, inCart } = this.state;
     return (
       <>
         <div className="App section">
