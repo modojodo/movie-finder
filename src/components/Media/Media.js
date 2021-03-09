@@ -9,7 +9,7 @@ function Media(props) {
         <article className="media">
           <div className="">
             <figure className="image is-128x128 overflow-auto">
-              <img src={media.Poster} alt="Media Image"/>
+              <img src={media.Poster} alt="Media"/>
             </figure>
           </div>
           <div className="media-content ml-5">
